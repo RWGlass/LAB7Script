@@ -1,4 +1,5 @@
 import os
+import datetime
 from netmiko import ConnectHandler
 from getpass import getpass
 
@@ -6,7 +7,7 @@ USERNAME = input('Please enter your Secure Shell username: ')
 PASS = getpass('Please enter your Secure Shell password: ')
 
 device = {
-  'ip': '',
+  'ip': '192.168.10.59',
   'username': USERNAME,
   'password': PASS,
   'device_type': 'cisco_ios'
@@ -18,4 +19,4 @@ output = c.send_command('show run')
 
 f = open('show_run.txt', 'x')
 
-f = write(output)
+f.write(output)
